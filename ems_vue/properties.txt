@@ -1,0 +1,16 @@
+server.servlet.context-path=ems_vue
+server.port=8989
+spring.application.name=ems
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
+spring.datasource.url=jdbcmysqllocalhost3306empuseUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong
+
+spring.datasource.username=root
+spring.datasource.password=123456
+
+mybatis.mapper-locations=classpathcombaizhimapper.xml
+mybatis.type-aliases-package=com.baizhi.entity
+
+logging.level.com.baizhi.dao=debug
+logging.level.com.baizhi.service=info
+logging.level.com.baizhi.controller=info

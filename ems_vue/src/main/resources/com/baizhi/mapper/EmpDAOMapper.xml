@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.EmpDAO">
+    <!--    add-->
+    <insert id="add" parameterType="Emp" useGeneratedKeys="true" keyProperty="id">
+        insert into t_emp values(#{id},#{empname},#{path},#{salary},#{age})
+    </insert>
+    <!--    findByEmpName-->
+    <select id="findByEmpName" parameterType="String" resultType="Emp">
+        select id,empname,path,salary,age from t_emp where empname = #{empname}
+    </select>
+    <!--    findAll-->
+    <select id="findAll" resultType="Emp">
+        select id,empname,path,salary,age from t_emp
+    </select>
+    <!--    delete-->
+    <delete id="delete" parameterType="String">
+        delete  from t_emp where id=#{id}
+    </delete>
+<!--    findOne-->
+    <select id="findOne" parameterType="String" resultType="Emp">
+        select id,empname,path,salary,age from t_emp where id = #{id}
+    </select>
+<!--    update-->
+    <update id="update" parameterType="Emp">
+        update t_emp set
+        empname=#{empname},
+        path=#{path},
+        salary=#{salary},
+        age=#{age}
+        where
+        id=#{id}
+    </update>
+</mapper>
